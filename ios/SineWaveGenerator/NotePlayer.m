@@ -12,14 +12,13 @@
 @implementation NotePlayer
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(playNote: (double *) freq) {
-  SoundGenerator = [TGSineWaveToneGenerator alloc];
-  [SoundGenerator initWithFrequency:*freq];
-  [SoundGenerator playThing];
+RCT_EXPORT_METHOD(playNote: (double) freq) {
+  self->soundGenerator = [[TGSineWaveToneGenerator alloc] initWithFrequency:freq];
+  [self->soundGenerator playThing];
 }
 RCT_EXPORT_METHOD(stopNote) {
-  [SoundGenerator stopThing];
-  SoundGenerator = nil;
+  [self->soundGenerator stopThing];
+  self->soundGenerator = nil;
 }
 @end
 

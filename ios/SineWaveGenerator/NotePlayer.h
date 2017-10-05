@@ -10,10 +10,10 @@
 
 @interface NotePlayer : NSObject <RCTBridgeModule> {
   @public
-  TGSineWaveToneGenerator *SoundGenerator;
+  TGSineWaveToneGenerator *soundGenerator;
 }
 
-- (void)playNote;
+- (void)playNote:(double)freq;
 
 - (void)stopNote;
 
