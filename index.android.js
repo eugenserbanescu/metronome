@@ -11,22 +11,28 @@ import {
   Text,
   View
 } from 'react-native';
+import { Provider } from 'react-redux';
+import configureStore from './store/configure-store';
+import Bar from './queues/bar';
+import Controller from './controller/index';
+import Player from './player/player';
+
+const store = configureStore();
+
+const App = props => (
+  <View style={{backgroundColor: '#f1f1f1'}}>
+    <Controller />
+    <Bar />
+    <Player />
+  </View>
+)
 
 export default class nativeTest extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+      <Provider store={store}>
+        <App />
+      </Provider>
     );
   }
 }
