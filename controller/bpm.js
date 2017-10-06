@@ -7,11 +7,11 @@ import styles from './styles';
 
 const BpmController = props => (
   <View style={styles.bpmWrapper}>
-    <TouchableHighlight style={styles.button} onPress={() => {props.decreaseBpm()}}>
+    <TouchableHighlight style={styles.button} onPress={props.decreaseBpm}>
       <Text style={styles.buttonText}>-</Text>
     </TouchableHighlight>
     <Text>{props.bpm}</Text>
-    <TouchableHighlight style={styles.button} onPress={() => {props.increaseBpm()}}>
+    <TouchableHighlight style={styles.button} onPress={props.increaseBpm}>
       <Text style={styles.buttonText}>+</Text>
     </TouchableHighlight>
   </View>
