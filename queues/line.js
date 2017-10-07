@@ -6,7 +6,7 @@ import React from 'react';
 
 const Line = props => {
   return (
-    <View style={styles.line}>
+    <View style={props.isRotated ? styles.lineRotated : styles.line}>
       {props.queue.map((enabled, index) => <Note enabled={enabled} note={props.note} index={index} key={props.note + index} />)}
     </View>
   );
