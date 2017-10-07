@@ -6,10 +6,17 @@ const styles = StyleSheet.create({
   bpmWrapper: {
     flexDirection: 'row'
   },
+  bpmText: {
+    fontSize: 24,
+    paddingLeft: 10,
+    paddingRight: 10
+  },
   button: {
     backgroundColor: '#ff4500',
     borderRadius: 15,
     justifyContent: 'center',
+    marginLeft: 10,
+    marginRight: 10,
     overflow: 'hidden',
     padding: 0,
     height: 30,
@@ -17,7 +24,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#ffffff',
-    fontSize: 30,
+    fontSize: 20,
+    textAlign: 'center'
   },
   controller: {
     backgroundColor: '#ffffff',

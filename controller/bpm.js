@@ -10,7 +10,7 @@ const BpmController = props => (
     <TouchableHighlight style={styles.button} onPress={props.decreaseBpm}>
       <Text style={styles.buttonText}>-</Text>
     </TouchableHighlight>
-    <Text>{props.bpm}</Text>
+    <Text style={styles.bpmText}>{props.bpm}</Text>
     <TouchableHighlight style={styles.button} onPress={props.increaseBpm}>
       <Text style={styles.buttonText}>+</Text>
     </TouchableHighlight>
