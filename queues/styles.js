@@ -6,6 +6,8 @@ const styles = StyleSheet.create({
   bar: {
     backgroundColor: '#ffffff',
     flexDirection: 'column',
+    paddingTop: 20,
+    paddingBottom: 20
   },
   line: {
     flexDirection: 'row',

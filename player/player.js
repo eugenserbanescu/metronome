@@ -1,5 +1,9 @@
 import { playNote, stopNote } from './note-player';
 import { connect } from 'react-redux';
+import {
+  Text,
+  View
+} from 'react-native';
 import React, { Component } from 'react';
 import notes from './notes.js';
 

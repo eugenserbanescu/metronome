@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
     padding: 20,
     flexDirection: 'row',
     justifyContent: 'center',
-    marginBottom: 20
+    marginBottom: 20,
+    marginTop: 40
   }
 });
 

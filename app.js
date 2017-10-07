@@ -6,10 +6,11 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
+  StyleSheet,
+  Text,
+  View
 } from 'react-native';
 import { Provider } from 'react-redux';
-import App from './app';
 import configureStore from './store/configure-store';
 import Bar from './queues/bar';
 import Controller from './controller/index';
@@ -17,12 +18,21 @@ import Player from './player/player';
 
 const store = configureStore();
 
+const App = props => (
+  <Provider store={store}>
+    <View style={styles.container}>
+      <Controller />
+      <Bar />
+      <Player />
+    </View>
+  </Provider>
+)
 
-
-export default class nativeTest extends Component {
-  render() {
-    return <App />;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#AAAAAA',
+    height: '100%'
   }
-}
+});
 
-AppRegistry.registerComponent('nativeTest', () => nativeTest);
+export default App;
