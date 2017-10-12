@@ -15,7 +15,7 @@ const line = {
 };
 
 const note = {
-  backgroundColor: '#cccccc',
+  backgroundColor: '#b2d3e6',
   borderRadius: 4,
   flex: 1,
   minHeight: 20,
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   note: note,
   noteActive: {
     ...note,
-    backgroundColor: '#ff4500',
+    backgroundColor: '#4390bc',
   }
 });
 

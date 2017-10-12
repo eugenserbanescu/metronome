@@ -30,7 +30,7 @@ const App = props => (
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#AAAAAA',
+    backgroundColor: '#dfe9f3',
     height: '100%'
   }
 });
