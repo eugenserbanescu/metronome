@@ -12,6 +12,7 @@ const INITIAL_STATE = {
     '2': [false, false],
     '4': [true, true, true, true],
     '8': [false,false,false,false,false,false,false,false],
+    '12': [false,false,false,false,false,false,false,false,false,false,false,false],
     '16': [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
   }
 };

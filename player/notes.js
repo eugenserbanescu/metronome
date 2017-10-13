@@ -26,6 +26,10 @@ const notes = {
     getDuration: bpm => 60000 / bpm / 2,
     symbol: '1D160'
   },
+  12: {
+    getDuration: bpm => 60000 / bpm / 3,
+    frequency: getNoteFrequency(-5)
+  },
   16: {
     frequency: getNoteFrequency(-8),
     getDuration: bpm => 60000 / bpm / 4,
@@ -33,11 +37,6 @@ const notes = {
   }
 }
 
-export const notesList = [1,2,4,8,16];
+export const notesList = [1,2,4,8,12,16];
 
 export default notes;
-
-// 12: {
-//   getDuration: bpm => 60000 / bpm / 3,
-//   frequency: getNoteFrequency(-5)
-// },

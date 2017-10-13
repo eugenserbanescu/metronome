@@ -16,24 +16,31 @@ function getRelativeIndex(note, noteIndex) {
 class Player extends Component {
   getNextNotes(newQueues) {
     let queues = newQueues || this.props.queues;
-    let finalQueue = new Array(16);
+    let finalQueue = [];
 
     Object.keys(queues).forEach(note => {
       const queue = queues[note];
       queue.forEach((shouldPlay, index) => {
         if (shouldPlay) {
           const relativeIndex = getRelativeIndex(note, index);
-          if(!finalQueue[relativeIndex]) {
-            finalQueue[relativeIndex] = {
+          if(!finalQueue.some(i => i.index === relativeIndex)) {
+            finalQueue.push({
               frequency: notes[note].frequency,
+              index: relativeIndex,
               start: notes[note].duration * index
-            }
+            })
           }
         }
       });
     });
 
-    return finalQueue.filter(n => n);
+    return finalQueue.sort((a,b) => {
+      if(a.index === b.index) {
+        return 0;
+      } else {
+        return a.index > b.index ? 1 : -1;
+      }
+    });
   }
 
   updateDurations(bpm) {

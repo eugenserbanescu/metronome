@@ -68,7 +68,7 @@ OSStatus RenderTone(
         if (_channels == NULL) return nil;
 
         _channels[0].frequency = hertz;
-        _channels[0].amplitude = SINE_WAVE_TONE_GENERATOR_AMPLITUDE_DEFAULT;
+        _channels[0].amplitude = SINE_WAVE_TONE_GENERATOR_AMPLITUDE_FULL;
 
         _sampleRate = SINE_WAVE_TONE_GENERATOR_SAMPLE_RATE_DEFAULT;
         [self _setupAudioSession];
