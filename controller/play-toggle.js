@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Text, TouchableHighlight } from 'react-native';
 import { togglePlay } from './actions.js';
-import RoundButton from '../commonComponents/round-button';
+import RoundButton from '../common-components/round-button';
 import React from 'react';
 
 const PlayToggle = props => (<RoundButton onPress={props.togglePlay} text='I/O'/>);

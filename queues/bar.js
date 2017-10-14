@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
-import {
-  Text,
-  TouchableHighlight,
-  View
-} from 'react-native';
+import { Text, TouchableHighlight, View } from 'react-native';
 import { notesList } from '../player/notes';
 import Line from './line';
+import RoundButton from '../common-components/round-button';
 
 class Bar extends Component {
   state = {
@@ -23,9 +20,7 @@ class Bar extends Component {
     const list = this.state.isRotated ? notesList.slice(0).reverse() : notesList;
     return (
       <View style={styles.barContainer}>
-        <TouchableHighlight style={styles.rotateButton} onPress={this.rotate}>
-          <Text style={styles.rotateButtonText}>Rotate queues!</Text>
-        </TouchableHighlight>
+        <RoundButton text='R' onPress={this.rotate}/>
         <View style={[styles.bar, this.state.isRotated && styles.barRotated]}>
           {list.map(note => <Line isRotated={this.state.isRotated} key={`line-${note}`} note={note} />)}
         </View>
@@ -49,15 +44,5 @@ const styles = StyleSheet.create({
   barRotated: {
     flexDirection: 'row',
     height: '90%',
-  },
-  rotateButton: {
-    backgroundColor: '#cccccc',
-    borderRadius: 5,
-    width: 200
-  },
-  rotateButtonText: {
-    color: '#ffffff',
-    fontSize: 24,
-    textAlign: 'center'
-  },
+  }
 });

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { decreaseBpm, increaseBpm, setBpm } from './actions';
 import { View, Text, TextInput, TouchableHighlight } from 'react-native';
 import React from 'react';
-import RoundButton from '../commonComponents/round-button';
+import RoundButton from '../common-components/round-button';
 
 class BpmController extends React.Component {
 

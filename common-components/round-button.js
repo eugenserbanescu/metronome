@@ -1,6 +1,4 @@
-import {
-  StyleSheet
-} from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Text, TouchableHighlight } from 'react-native';
 import React from 'react';
 
