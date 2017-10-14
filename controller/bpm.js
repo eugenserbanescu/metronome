@@ -1,21 +1,26 @@
 import { StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import { decreaseBpm, increaseBpm, setBpm } from './actions';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { View, Text, TextInput, TouchableHighlight } from 'react-native';
 import React from 'react';
 import RoundButton from '../commonComponents/round-button';
 
-const BpmController = props => (
-  <View style={styles.bpmWrapper}>
-    <RoundButton onPress={props.decreaseBpm} text='-'/>
-    <Text style={styles.bpmText}>{props.bpm}</Text>
-    <RoundButton onPress={props.increaseBpm} text='+'/>
-  </View>
-)
+class BpmController extends React.Component {
+
+  render() {
+    return (
+      <View style={styles.bpmWrapper}>
+        <RoundButton onPress={this.props.decreaseBpm} text='-'/>
+        <TextInput keyboardType='numeric' style={styles.bpmText} value={this.props.bpm} underlineColorAndroid='transparent' onChangeText={this.props.setBpm}/>
+        <RoundButton onPress={this.props.increaseBpm} text='+'/>
+      </View>
+    );
+  }
+}
 
 function mapStateToProps(state, props) {
   return {
-    bpm: state.audio.bpm,
+    bpm: state.audio.bpm.toString(),
   }
 }
 
@@ -32,8 +37,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   bpmText: {
+    color: '#3D3D3D',
     fontSize: 24,
-    paddingLeft: 10,
-    paddingRight: 10
+    paddingTop: 0,
+    textAlign: 'center',
+    width: 100,
   },
 });

@@ -7,6 +7,7 @@ export const togglePlay = function() {
 
 export const SET_BPM = 'audio/SET_BPM';
 export const setBpm = function(bpm) {
+  const sanitizedBpm = parseInt(bpm);
   return {
     type: SET_BPM,
     payload: bpm
