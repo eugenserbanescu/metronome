@@ -1,19 +1,15 @@
+import { StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import { decreaseBpm, increaseBpm, setBpm } from './actions';
-import React from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
-import styles from './styles';
-
+import React from 'react';
+import RoundButton from '../commonComponents/round-button';
 
 const BpmController = props => (
   <View style={styles.bpmWrapper}>
-    <TouchableHighlight style={styles.button} onPress={props.decreaseBpm}>
-      <Text style={styles.buttonText}>-</Text>
-    </TouchableHighlight>
+    <RoundButton onPress={props.decreaseBpm} text='-'/>
     <Text style={styles.bpmText}>{props.bpm}</Text>
-    <TouchableHighlight style={styles.button} onPress={props.increaseBpm}>
-      <Text style={styles.buttonText}>+</Text>
-    </TouchableHighlight>
+    <RoundButton onPress={props.increaseBpm} text='+'/>
   </View>
 )
 
@@ -31,14 +27,13 @@ const mapDispatchToProps = {
 
 export default connect(mapStateToProps,mapDispatchToProps)(BpmController);
 
-
-{/* <form onSubmit={e => {
-  e.preventDefault();
-  const value = parseInt(e.target.elements[0].value);
-  if(typeof value === 'number' && !isNaN(value)) {
-    props.setBpm(value);
-  }
-}}>
-  <label htmlFor="bpm">BPM:</label>
-  <input onChange={e => props.setBpm(e.target.value)} id="bpm" style={inputStyle} type="text" value={props.bpm}/>
-</form> */}
+const styles = StyleSheet.create({
+  bpmWrapper: {
+    flexDirection: 'row'
+  },
+  bpmText: {
+    fontSize: 24,
+    paddingLeft: 10,
+    paddingRight: 10
+  },
+});

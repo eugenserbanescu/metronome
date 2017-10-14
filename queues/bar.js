@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StyleSheet } from 'react-native';
 import {
   Text,
   TouchableHighlight,
@@ -6,11 +7,10 @@ import {
 } from 'react-native';
 import { notesList } from '../player/notes';
 import Line from './line';
-import styles from './styles';
 
 class Bar extends Component {
   state = {
-    isRotated: true
+    isRotated: false
   }
 
   rotate = () => {
@@ -26,7 +26,7 @@ class Bar extends Component {
         <TouchableHighlight style={styles.rotateButton} onPress={this.rotate}>
           <Text style={styles.rotateButtonText}>Rotate queues!</Text>
         </TouchableHighlight>
-        <View style={this.state.isRotated ? styles.barRotated : styles.bar}>
+        <View style={[styles.bar, this.state.isRotated && styles.barRotated]}>
           {list.map(note => <Line isRotated={this.state.isRotated} key={`line-${note}`} note={note} />)}
         </View>
       </View>
@@ -35,3 +35,29 @@ class Bar extends Component {
 }
 
 export default Bar;
+
+const styles = StyleSheet.create({
+  barContainer: {
+    backgroundColor: '#ffffff',
+    padding: 20,
+  },
+  bar: {
+    flexDirection: 'column',
+    alignItems: 'stretch',
+    justifyContent: 'space-between',
+  },
+  barRotated: {
+    flexDirection: 'row',
+    height: '90%',
+  },
+  rotateButton: {
+    backgroundColor: '#cccccc',
+    borderRadius: 5,
+    width: 200
+  },
+  rotateButtonText: {
+    color: '#ffffff',
+    fontSize: 24,
+    textAlign: 'center'
+  },
+});
