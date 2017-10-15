@@ -12,11 +12,6 @@ const Line = props => {
   );
 };
 
-function mapStateToProps(state, props) {
-  return {
-    queue: state.queues[props.note]
-  };
-}
 
 const styles = StyleSheet.create({
   line: {
@@ -30,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps)(Line);
+export default Line;
