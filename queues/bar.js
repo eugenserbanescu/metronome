@@ -6,13 +6,21 @@ import { notesList } from '../player/notes';
 import Line from './line';
 import RoundButton from '../common-components/round-button';
 
-const Bar = props => (
-  <View style={styles.barContainer}>
-    <View style={styles.bar}>
-      {notesList.map(note => <Line key={`line-${note}`} queue={props.queues[note]} note={note} />)}
-    </View>
-  </View>
-);
+class Bar extends Component {
+  componentWillReceiveProps(nextProps) {
+
+  }
+
+  render() {
+    return (
+      <View style={styles.barContainer}>
+        <View style={styles.bar}>
+          {notesList.map(note => <Line key={`line-${note}`} queue={this.props.queues[note]} note={note} />)}
+        </View>
+      </View>
+    )
+  }
+}
 
 function mapStateToProps(state, props) {
   return {

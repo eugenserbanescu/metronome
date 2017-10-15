@@ -96,7 +96,7 @@ android {
     defaultConfig {
         renderscriptTargetApi 21
         applicationId "com.nativetest"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"

@@ -9,6 +9,8 @@ import android.media.AudioTrack;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 
+import java.lang.annotation.Target;
+
 public class NotePlayer extends ReactContextBaseJavaModule {
 
   public NotePlayer(ReactApplicationContext reactContext) {
@@ -34,7 +36,8 @@ public class NotePlayer extends ReactContextBaseJavaModule {
       mBuffer[i] = (short) (mSound[i]*Short.MAX_VALUE);
     }
 
-    mAudioTrack.setStereoVolume(AudioTrack.getMaxVolume(), AudioTrack.getMaxVolume());
+//    mAudioTrack.setStereoVolume(AudioTrack.getMaxVolume(), AudioTrack.getMaxVolume());
+    mAudioTrack.setVolume((float) 0.9);
     mAudioTrack.play();
 
     mAudioTrack.write(mBuffer, 0, mSound.length);
