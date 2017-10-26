@@ -1,10 +1,13 @@
+Rename Android app from nativeTest to Metronome :)
+Refactor actions+reducers into their own folders 'n' stuff
 Build for Android phone -> run on phone as app - DONE
   - Implement volume control - DONE
   - Stop the clicking noise (implement decay)
-  - Reset bars orientation on orientation change
-  - There seemed to be a bit of a dip in tempo at some point? Investigate
+  - Investigate why sometimes the 1st note lasts longer then the rest; makes it
+    all sounds broken
   - it overlayed two tracks at once? Investigate seemed to be related to leaving and coming back
 Implement a line that moves across the notes to show where in the beat we are
-make and add Icon + correct app name
+Maybe pop out the note boxes?
+Make and add Icon + correct app name
   - maybe get rid of the splash screen?
 Think about and implement a way to show/hide queue lanes
