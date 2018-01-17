@@ -1,5 +1,4 @@
 import { NativeModules } from 'react-native';
-import { notes, notesList } from './notes';
 
 const player = NativeModules.NotePlayer;
 
